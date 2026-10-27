@@ -1,5 +1,7 @@
 # Agent Organization Guide
 
+Version: `v0.1.0`
+
 Use this repository to build a small team of durable AI agents without copying anyone's private deployment.
 
 The design is runtime-neutral. Hermes plus Discord is the first concrete reference. An OpenClaw bot can use the same operating model by mapping each object below to its own agent, channel, session, memory, and tool facilities. This repository gives the bot the rules and records it needs; it does not need to run the optional scripts.
@@ -100,6 +102,8 @@ No live Discord server, OpenClaw installation, Codex coding task, or Magpie mode
 - [examples/minimal-team](examples/minimal-team) — three roles and one project
 - [examples/magpie-routing](examples/magpie-routing) — optional model-routing design
 - [templates](templates) — role, governance, channel, kickoff, and handoff templates
+
+- [CHANGELOG.md](CHANGELOG.md) — released versions and upgrade history
 
 Before publishing a derived repository, run `python3 scripts/check_docs.py` when Python is available. The script is a scanner, not part of the agent architecture.
 

@@ -15,9 +15,20 @@ Replace Discord channels and threads with the closest native equivalents. Before
 - Whether multiple users share one transcript.
 - Revocation: removing access, stopping the process, and rotating credentials.
 
-## Another agent runtime
+## OpenClaw mapping
 
-For OpenClaw or any other runtime, write an explicit mapping from each architecture object to a runtime object. At minimum, identify where role configuration, conversation history, memory, credentials, and tool permissions are stored. If those stores are shared, say so plainly and do not describe the setup as profile-isolated.
+OpenClaw can implement the architecture without using Hermes commands. Map the objects explicitly:
+
+| Architecture object | Required OpenClaw answer |
+|---|---|
+| Durable role | Which persisted agent, workspace, or instruction file represents one role |
+| Messaging identity | Which chat account belongs to that role and where its credential is stored |
+| Workplace | Which room or channel is normally used to address that role |
+| Project thread | Which conversation, topic, or session is dedicated to one project |
+| Shared handoff | Which document all assigned roles can read |
+| Role memory | Which memory namespace belongs to one role and is excluded from the others |
+
+Do not describe OpenClaw as tested by this repository. After the mapping is written, run the fictional-data separation test below and record the OpenClaw version and every failed assumption.
 
 Test the runtime with fictional data:
 

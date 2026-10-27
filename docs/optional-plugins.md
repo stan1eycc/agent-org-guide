@@ -38,7 +38,7 @@ Do not send it credentials, private project data, personal records, or complete 
 
 ## Coding tools
 
-The examples do not require a particular coding CLI. A specialist role may use Codex, Claude Code, Antigravity, Grok, or another tool when the operator has installed and authorized it. The role must still report the diff and test results itself. A coding tool's completion message is not acceptance.
+The examples do not require a particular coding CLI. A specialist role may use Codex, Claude Code, Antigravity, Grok, or another tool available to Hermes or OpenClaw when the operator has installed and authorized it. The role must still report the diff and test results itself. A coding tool's completion message is not acceptance.
 
 For the Codex lane, use [Codex development](codex-development.md). Hermes writes the bounded task, Codex works in the assigned Git repository, and Magpie is an optional model router. Magpie does not authorize file changes, commits, or publication.
 

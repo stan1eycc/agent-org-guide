@@ -1,0 +1,13 @@
+# Local private material. Keep real configuration outside this repository.
+.env
+*.env
+auth.json
+credentials/
+secrets/
+
+# Operator scratch, bytecode, and generated reports
+.local/
+__pycache__/
+*.pyc
+*.log
+publication-readiness-report.md

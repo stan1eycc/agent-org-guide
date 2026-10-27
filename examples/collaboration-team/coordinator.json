@@ -1,0 +1,15 @@
+{
+  "group_sessions_per_user": true,
+  "discord": {
+    "require_mention": true,
+    "thread_require_mention": true,
+    "auto_thread": false,
+    "free_response_auto_thread": false,
+    "allow_bots": "none",
+    "ignore_no_mention": true,
+    "allow_all_users": false,
+    "allowed_users": "YOUR_OPERATOR_ID",
+    "allowed_channels": "YOUR_COORDINATOR_CHANNEL_ID,YOUR_PROJECT_PARENT_ID,YOUR_PROJECT_THREAD_ID",
+    "free_response_channels": "YOUR_COORDINATOR_CHANNEL_ID"
+  }
+}

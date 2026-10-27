@@ -1,0 +1,64 @@
+{
+  "reviewed_on": "2026-10-27",
+  "official_sources": [
+    {
+      "id": "S1",
+      "title": "Installation",
+      "url": "https://hermes-agent.nousresearch.com/docs/getting-started/installation"
+    },
+    {
+      "id": "S2",
+      "title": "Profiles",
+      "url": "https://hermes-agent.nousresearch.com/docs/user-guide/profiles"
+    },
+    {
+      "id": "S3",
+      "title": "Discord",
+      "url": "https://hermes-agent.nousresearch.com/docs/user-guide/messaging/discord"
+    },
+    {
+      "id": "S4",
+      "title": "Security",
+      "url": "https://hermes-agent.nousresearch.com/docs/user-guide/security"
+    },
+    {
+      "id": "S5",
+      "title": "Skills",
+      "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills"
+    },
+    {
+      "id": "S6",
+      "title": "Memory",
+      "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/memory"
+    },
+    {
+      "id": "S7",
+      "title": "Memory providers",
+      "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/memory-providers"
+    }
+  ],
+  "raw_markdown": [
+    {
+      "url": "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/website/docs/user-guide/messaging/discord.md",
+      "extracted_text_sha256": "b270520fb3c68dadcc94c416c7053f2537e4ae78282761c13302f5a3e564d312"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/website/docs/user-guide/profiles.md",
+      "extracted_text_sha256": "33a59976eb382ad3d4b5cdb5c59f2b32118817375841bd5fc33d261a35a3f427"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/website/docs/user-guide/security.md",
+      "extracted_text_sha256": "c4e332985b9e357dcb8e476542629aaf95c76800c30702bd6d6d766a9a20bb47"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/website/docs/user-guide/features/skills.md",
+      "extracted_text_sha256": "12fae1cc9a43556edd99105878e7a7f0d6c5582bd542dc2b1461f9519f490983"
+    }
+  ],
+  "saved_rule_source": {
+    "kind": "authorized shared procedure; collaboration section only used",
+    "version": "1.4.0",
+    "production_settings_inspected": false,
+    "historical_live_behavior_verified": false
+  }
+}

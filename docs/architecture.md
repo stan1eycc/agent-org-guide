@@ -33,6 +33,24 @@ The included example has:
 
 One project, `sample-project`, has one thread. Its kickoff states scope, inputs, acceptance, prohibitions, and stop conditions. Its handoff records only facts that were checked.
 
+## Collaboration threads
+
+A [collaboration thread](collaboration.md) extends project work without adding a new durable role. Name its participants, contribution owners and synthesis owner. Return the accepted result to the accountable project owner through an approved transport. The included [extension](../examples/collaboration-team/README.md) uses human-mediated transfer and rejects bot-authored reply triggers.
+
+```mermaid
+flowchart TB
+  H[Human operator] --> P[Private project parent / strict project thread]
+  P --> C[Coordinator Profile / delivery owner]
+  H --> T[Private collaboration parent / registered collaboration thread]
+  T --> A[Alpha Profile / analysis and synthesis]
+  T --> B[Beta Profile / independent review]
+  A -. contribution .-> H
+  B -. review .-> H
+  H -. accepted handoff .-> P
+```
+
+This diagram describes the optional extension, not a live deployment. Human-mediated handoff arrows are procedural; bot posts never dispatch tasks. The parents are separate from individual workplaces. Shared visibility does not imply one shared session transcript, memory or filesystem permission.
+
 ## Runtime-neutral contract
 
 Any runtime can implement this model if it can provide all of the following:

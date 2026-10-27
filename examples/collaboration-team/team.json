@@ -1,0 +1,27 @@
+{
+  "schema": "blueprint-example-v1",
+  "roles": [
+    "coordinator",
+    "specialist-alpha",
+    "specialist-beta"
+  ],
+  "project": {
+    "owner": "coordinator",
+    "parent": "YOUR_PROJECT_PARENT_ID",
+    "thread": "YOUR_PROJECT_THREAD_ID",
+    "participants": [
+      "coordinator"
+    ]
+  },
+  "collaboration": {
+    "owner": "specialist-alpha",
+    "parent": "YOUR_COLLABORATION_PARENT_ID",
+    "thread": "YOUR_COLLABORATION_THREAD_ID",
+    "participants": [
+      "specialist-alpha",
+      "specialist-beta"
+    ]
+  },
+  "delivery": "human-mediated",
+  "bot_triggers": false
+}

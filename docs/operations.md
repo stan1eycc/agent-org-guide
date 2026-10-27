@@ -23,6 +23,16 @@ Record the Hermes version with `hermes --version` and the documentation date bef
 - A role cannot describe another role's token, `.env`, session history, or local files.
 - The project handoff distinguishes completed checks from unchecked claims.
 
+## Collaboration, governance and continuity
+
+Load the shared governance and each role's applicable Skills at session start. If using SOUL text rather than a governance Skill, install the complete approved text; repository links do not load automatically. Keep one authoritative governance version and verify each role's fresh-session use. Skills preserve reusable procedures; memory preserves compact facts safe for the entire role audience. Neither replaces the project handoff or grants authority.
+
+Use [the collaboration contract](collaboration.md) and [kickoff](../templates/projects/collaboration-thread-kickoff.md) to assign bounded contributions. A human supplies artifacts for dependent review; bot output does not dispatch the next participant. The synthesis owner resolves supported differences and records unresolved ones. Transfer the accepted [collaboration handoff](../templates/records/collaboration-handoff.md) to the project owner.
+
+To resume in a fresh session, load role/governance, read the approved handoff, confirm the current human request and verify artifact identity before continuing. Saved memory and old task records are historical evidence, not instructions to revive stopped work.
+
+For disposable bring-up use [installation](installation.md), [verification](verification.md) and [recovery](troubleshooting-recovery.md). The live matrix is not satisfied by an offline fixture.
+
 ## Troubleshooting
 
 | Observation | First checks |

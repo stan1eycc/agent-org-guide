@@ -1,6 +1,6 @@
 # Agent Organization Guide
 
-Version: `v0.1.0`
+Version: `v0.2.0`
 
 Use this repository to build a small team of durable AI agents without copying anyone's private deployment.
 
@@ -27,6 +27,14 @@ operator
 The coordinator decides who does what and records the result. Alpha implements in one assigned repository. Beta checks the evidence and looks for gaps. All three can participate in the same project thread, but none receives another role's private memory, credentials, or files merely because it can see that thread.
 
 A project starts from [templates/projects/project-thread-kickoff.md](templates/projects/project-thread-kickoff.md). It names the scope, inputs, acceptance checks, prohibitions, and stop conditions. It ends with [templates/records/handoff-record.md](templates/records/handoff-record.md), which records checked facts rather than relying on model memory.
+
+## Multi-bot collaboration
+
+A project can add a collaboration thread with named participants and one synthesis owner. The [collaboration design](docs/collaboration.md) covers assignments, mentions, reply triggers, loop prevention, review, convergence and final delivery. The [extension example](examples/collaboration-team/README.md) uses one coordinator, two specialists, one project thread and one collaboration thread.
+
+Shared parent channels require @mentions. In the optional registered collaboration thread, an unmentioned human message may wake both specialists. Bot-authored messages never trigger another bot. The human supplies review inputs, requests synthesis and transfers the accepted handoff to the coordinator. This is a proposed operating convention based on documented controls and saved rules; actual production settings and historical live behavior were not inspected or verified.
+
+The original minimal example keeps strict mentions in its project thread. The extension deliberately chooses a more relaxed collaboration thread, with version-sensitive caveats. Read [sources and evidence](docs/collaboration-evidence.md), [installation](docs/installation.md), [verification](docs/verification.md), and [recovery](docs/troubleshooting-recovery.md) before deploying it. Profiles, threads and prompts remain separate from security enforcement.
 
 ## What an OpenClaw bot should do
 
@@ -100,10 +108,13 @@ No live Discord server, OpenClaw installation, Codex coding task, or Magpie mode
 - [docs/optional-plugins.md](docs/optional-plugins.md) — Hindsight, HeartBeat, Jev, and coding tools
 - [docs/codex-development.md](docs/codex-development.md) — optional Codex development lane
 - [examples/minimal-team](examples/minimal-team) — three roles and one project
+- [examples/collaboration-team](examples/collaboration-team) — two specialists sharing a collaboration thread
+- [docs/collaboration.md](docs/collaboration.md) — triggers, ownership, synthesis and evidence limits
 - [examples/magpie-routing](examples/magpie-routing) — optional model-routing design
 - [templates](templates) — role, governance, channel, kickoff, and handoff templates
 
 - [CHANGELOG.md](CHANGELOG.md) — released versions and upgrade history
+- [docs/publication-review.md](docs/publication-review.md) — review scope, executed checks and remaining limitations
 
 Before publishing a derived repository, run `python3 scripts/check_docs.py` when Python is available. The script is a scanner, not part of the agent architecture.
 

@@ -9,7 +9,7 @@ Checked on 2026-10-27:
 - Installed Hermes Agent: `v0.22.4+261.gbf0203a.dirty` (`2026.9.24`)
 - Profile behavior: <https://hermes-agent.nousresearch.com/docs/user-guide/profiles>
 - Discord behavior: <https://hermes-agent.nousresearch.com/docs/user-guide/messaging/discord>
-- Multiple gateways: <https://hermes-agent.nousresearch.com/docs/user-guide/multi-profile-gateways>
+- Standalone gateway lifecycle: official Profiles documentation linked above
 - Sessions and configuration: official Sessions, Security, Configuration, Context Files, and Skills pages
 
 The version command was run locally. The documentation pages were read from the official site. No live Discord server, bot account, or gateway was created while validating this guide.
@@ -18,12 +18,12 @@ The version command was run locally. The documentation pages were read from the 
 
 - A profile is a separate Hermes home. Official documentation describes separate configuration, credentials, memory, sessions, skills, cron state, and state database for each profile.
 - `hermes profile create NAME` creates a profile. With the normal alias behavior, that name becomes a command such as `coordinator setup` and `coordinator gateway start`.
-- Official multi-gateway documentation shows one gateway service per profile, using that profile's own bot credentials and state.
+- Official Profiles documentation shows standalone per-profile gateway services. This does not verify a multiplexer or any live deployment.
 - Discord requires the Message Content intent. Server Members intent is required for username or role-based authorization.
 - Without an access policy, current Hermes documentation says Discord connects but denies inbound users. The supported controls include `DISCORD_ALLOWED_USERS`, `DISCORD_ALLOWED_ROLES`, and `DISCORD_ALLOWED_CHANNELS`.
 - Discord threads have session history separate from the parent channel. Mention rules still apply unless the thread or parent is explicitly configured as free-response.
 - `group_sessions_per_user` defaults to `true`, isolating users who share a channel. Set it to `false` only when a project thread intentionally shares one transcript.
-- `discord.thread_require_mention: true` disables the shortcut that otherwise lets later messages in a participated thread bypass a fresh mention. This is the setting used by the minimal example.
+- `discord.thread_require_mention: true` disables the shortcut that otherwise lets later messages in a participated thread bypass a fresh mention. This is the setting used by the original minimal example; the optional [collaboration extension](collaboration.md) deliberately relaxes the specialists' thread setting and registers its exact collaboration thread.
 - Secrets belong in `.env`; non-secret settings belong in `config.yaml`. `hermes config set` routes uppercase secret-style names to `.env`.
 
 ## Unverified or version-sensitive behavior
@@ -95,6 +95,10 @@ A public thread is visible to everyone who can view its parent. A private thread
 5. Delete the profile only with `hermes profile delete ROLE` after that confirmation.
 
 Stopping a gateway does not revoke a token or remove a bot from Discord. Complete all three layers.
+
+## Optional collaboration policy
+
+The baseline above remains mention-gated. For multi-bot collaboration, see [the separate contract](collaboration.md) and [configuration fragments](../examples/collaboration-team/README.md). The extension keeps `group_sessions_per_user: true`, rejects bot authors with string `none`, makes dedicated workplaces mention-free and registers the exact collaboration thread for both specialists. A relaxed joined-thread setting may affect other joined threads; verify scope and effective environment precedence. Do not mix the fragments into the baseline without selecting the intended policy.
 
 ## Other runtimes
 
